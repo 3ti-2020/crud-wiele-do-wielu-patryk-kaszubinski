@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main"><?php
+    <div class="main">
+    
+    <!-- <?php
         $servername="localhost";
         $username="root";
         $password="";
@@ -30,7 +32,7 @@
             echo("</tr>");
         }
         echo("</table>");
-    ?>
+    ?> -->
     </div>
     <div class="right">
     <form action="insert.php" method="POST">
