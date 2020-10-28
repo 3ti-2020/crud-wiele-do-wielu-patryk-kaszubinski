@@ -8,7 +8,7 @@
 </head>
 <body>  
     <header>
-    <h1>Patryk Kaszubiński 4Ti</h1>
+    <h1>Patryk Kaszubiński 4Ti nr.5</h1>
     </header>
     <div class="main">
     
@@ -20,7 +20,7 @@
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $result = $conn->query("SELECT imie, nazwisko, tytul FROM wypozyczenia, ksiazki, autorzy WHERE (wypozyczenia.id_a=autorzy.id_a) and (wypozyczenia.id_ks=wypozyczenia.id_ks)");
+        $result = $conn->query("SELECT imie, nazwisko, tytul FROM ksiazki, wypozyczenia, autorzy WHERE ksiazki.id_ks = wypozyczenia.id_ks AND autorzy.id_a=wypozyczenia.id_a");
 
         echo("<table>");
         echo("<tr>
@@ -39,8 +39,9 @@
     </div>
     <div class="right">
     <form action="insert.php" method="POST">
-    id_a<input type="text" name="id_a">
-    id_ks<input type="text" name="id_ks">
+    imie<input type="text" name="imie">
+    nazwisko<input type="text" name="nazwisko">
+    tytul<input type="text" name="tytul">
     <input type="submit" value="Wyslij" method="POST">
     </form>
     </div>
