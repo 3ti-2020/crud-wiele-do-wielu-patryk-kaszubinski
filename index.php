@@ -6,14 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>  
+    <header>
+    <h1>Patryk Kaszubiński 4Ti</h1>
+    </header>
     <div class="main">
     
-    <!-- <?php
-        $servername="localhost";
-        $username="root";
-        $password="";
-        $dbname="biblioteka2";
+    <?php
+        $servername="remotemysql.com";
+        $username="Exb33YnuaQ";
+        $password="imJTYDYLDl";
+        $dbname="Exb33YnuaQ";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -32,7 +35,7 @@
             echo("</tr>");
         }
         echo("</table>");
-    ?> -->
+    ?>
     </div>
     <div class="right">
     <form action="insert.php" method="POST">

@@ -2,9 +2,11 @@ body{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'a b';
+    grid-template-areas: 
+    'c c'
+    'a b';
 }
 .main{
     grid-area: a;
@@ -16,6 +18,13 @@ body{
 .right{
     grid-area: b;
     background: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    grid-area: c;
+    background: yellow;
     display: flex;
     justify-content: center;
     align-items: center;
