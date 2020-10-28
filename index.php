@@ -20,18 +20,18 @@
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $result = $conn->query("SELECT * FROM wypozyczenia");
+        $result = $conn->query("SELECT imie, nazwisko, tytul FROM wypozyczenia, ksiazki, autorzy WHERE (wypozyczenia.id_a=autorzy.id_a) and (wypozyczenia.id_ks=wypozyczenia.id_ks)");
 
-        echo("<table style='border: 1px solid black'>");
+        echo("<table>");
         echo("<tr>
-        <td style='border: 1px solid black'>id_wyp</td>
-        <td style='border: 1px solid black'>id_a</td>
-        <td style='border: 1px solid black'>id_ks</td>
+        <td>imie</td>
+        <td>nazwisko</td>
+        <td>tytul</td>
         </tr>");
 
         while($wiersz = $result->fetch_assoc()){
             echo("<tr>");
-            echo("<td style='border: 1px solid black'>".$wiersz['id_wyp']."<td>".$wiersz['id_a']."<td>".$wiersz['id_ks']);
+            echo("<td>".$wiersz['imie']."<td>".$wiersz['nazwisko']."<td>".$wiersz['tytul']);
             echo("</tr>");
         }
         echo("</table>");
