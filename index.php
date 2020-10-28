@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
+    <div class="main"><?php
         $servername="localhost";
         $username="root";
         $password="";
@@ -31,10 +31,13 @@
         }
         echo("</table>");
     ?>
+    </div>
+    <div class="right">
     <form action="insert.php" method="POST">
     id_a<input type="text" name="id_a">
     id_ks<input type="text" name="id_ks">
     <input type="submit" value="Wyslij" method="POST">
     </form>
+    </div>
 </body>
 </html>
