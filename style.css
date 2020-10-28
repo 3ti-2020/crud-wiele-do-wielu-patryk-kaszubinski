@@ -1,0 +1,22 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "a b";
+}
+.main{
+        grid-area: a;
+    background: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    grid-area: b;
+    background: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
