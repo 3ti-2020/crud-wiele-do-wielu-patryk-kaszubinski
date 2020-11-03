@@ -37,6 +37,6 @@ $sql2="INSERT INTO `ksiazki`(`tytul`) VALUES ('$tytul')";
 
       $conn->close();
 
-      header('Location: http://localhost/ads/index.php');
+      header('Location: https://wdw-patryk-k.herokuapp.com/');
 
 ?>
