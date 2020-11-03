@@ -32,3 +32,11 @@ header{
 table,td, tr{
     border: 1px solid black;
 }
+form{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}

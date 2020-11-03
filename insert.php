@@ -6,6 +6,9 @@ $password="imJTYDYLDl";
 $dbname="Exb33YnuaQ";
 $conn=new mysqli($servername,$username,$password,$dbname);
 
+if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }    
 
 $imie = $_POST['imie'];
 $nazwisko=$_POST['nazwisko'];
@@ -15,6 +18,7 @@ $sql="INSERT INTO `autorzy`(`imie`, `nazwisko`) VALUES ('$imie', '$nazwisko')";
 $tytul=$_POST['tytul'];
 
 $sql2="INSERT INTO `ksiazki`(`tytul`) VALUES ('$tytul')";
+
 
       mysqli_query($conn, $sql);
       mysqli_query($conn, $sql2);

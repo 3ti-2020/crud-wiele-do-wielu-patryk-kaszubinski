@@ -39,9 +39,9 @@
     </div>
     <div class="right">
     <form action="insert.php" method="POST">
-    imie<input type="text" name="imie">
-    nazwisko<input type="text" name="nazwisko">
-    tytul<input type="text" name="tytul">
+    IMIE<input type="text" name="imie">
+    NAZWISKO<input type="text" name="nazwisko">
+    TYTUL<input type="text" name="tytul">
     <input type="submit" value="Wyslij" method="POST">
     </form>
     </div>
