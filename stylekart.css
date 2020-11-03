@@ -1,0 +1,138 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background: coral;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card{
+    height: 500px;
+    width: 400px;
+    background: cadetblue;
+    border-radius: 8px; 
+    box-shadow: 3px 3px rgba(59, 58, 58, 0.692);
+}
+.kol{
+    display: flex;
+    text-decoration-style: none;
+    list-style-type: none;
+    width: 60px;
+    justify-content: space-around;
+}
+.photo{
+    position: relative;
+    top: 40px;
+    left: -130px;
+}
+img{
+    height: 400px;
+    width: 280px;
+    border-radius: 8px;
+    float: left;
+    box-shadow:  3px 3px rgba(59, 58, 58, 0.692);
+}
+.prawa{
+    float: right;
+    position: relative;
+    top: -390px;
+    left: -20px;
+}
+h1{
+    color: red;    
+}
+h3{
+    color: lightgray;
+}
+h2{
+    color: lime;
+}
+.rodz{
+    height: 40px;
+    width: 40px;
+}
+.rodz:hover{
+    border: solid 1px red;
+}
+button{
+    width: 100px;
+    height: 60px;
+    background: crimson;
+    color: white;
+}
+.liczenie{
+    height: 200px;
+    width: 200px;
+    background: aqua;
+}
+.card2{
+    height: 500px;
+    width: 400px;
+    background-image: url(https://www.kalendarzrolnikow.pl/upload/image/letnieowoceart.jpg);
+    border-radius: 8px; 
+    box-shadow: 3px 3px rgba(59, 58, 58, 0.692);
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "a"
+    "b"
+    "c";
+    transition: .5s;
+    transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
+}
+.card2:hover{
+    transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 3px 3px rgba(59, 58, 58, 0.692);
+}
+header{
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgray;
+}
+main{
+    grid-area: b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+footer{
+    grid-area: c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgray;
+}
+.opis{
+    color: white;
+}
+.bot{
+    display: flex;
+    flex-wrap:wrap;
+}
+input{
+    width: 30px;
+    height: 10px;
+}
+@keyframes animacja{
+    0%{
+        transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    25%{
+        transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
+    }
+    50%{
+        transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    75%{
+        transform: perspective(-3em) rotateX(0deg) rotateY(1.175deg) rotateZ(1deg);
+    }
+    100%{
+        transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+span{
+    color: white;
+}

@@ -8,7 +8,8 @@
 </head>
 <body>  
     <header>
-    <h1>Patryk Kaszubiński 4Ti nr.5</h1>
+        <h1>Patryk Kaszubiński 4Ti nr.5</h1>
+        <a href="kartka.html"><h2>KARTKA</h2></a>
     </header>
     <div class="main">
     

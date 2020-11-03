@@ -26,8 +26,13 @@ header{
     grid-area: c;
     background: yellow;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+a{
+    text-decoration: none;
+    text-decoration-line: none;
+    color: black;
 }
 table,td, tr{
     border: 1px solid black;
