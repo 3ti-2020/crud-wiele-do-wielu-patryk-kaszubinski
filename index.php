@@ -25,9 +25,9 @@
 
         echo("<table>");
         echo("<tr>
-        <td>imie</td>
-        <td>nazwisko</td>
-        <td>tytul</td>
+        <td>Imie</td>
+        <td>Nazwisko</td>
+        <td>Tytul</td>
         </tr>");
 
         while($wiersz = $result->fetch_assoc()){
@@ -40,9 +40,9 @@
     </div>
     <div class="right">
     <form action="insert.php" method="POST">
-    IMIE<input type="text" name="imie">
-    NAZWISKO<input type="text" name="nazwisko">
-    TYTUL<input type="text" name="tytul">
+    IMIE<input type="text" name="imie" placeholder="np. Henryk">
+    NAZWISKO<input type="text" name="nazwisko" placeholder="np. Sienkiewicz">
+    TYTUL<input type="text" name="tytul" placeholder="np. Quo Vadis">
     <input type="submit" value="Wyslij" method="POST">
     </form>
     </div>

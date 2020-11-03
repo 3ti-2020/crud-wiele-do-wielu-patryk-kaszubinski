@@ -36,6 +36,7 @@ a{
 }
 table,td, tr{
     border: 1px solid black;
+    color: wheat;
 }
 form{
     height: 80%;
@@ -44,4 +45,11 @@ form{
     justify-content: space-around;
     align-items: center;
     color: white;
+}
+td:hover{
+    background: crimson;
+    transition: 0.3s;
+}
+input{
+    border-radius: 6px;
 }
