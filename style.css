@@ -57,4 +57,6 @@ input{
 .clock{
     background: black;
     color: green;
+    padding: 10px;
+    border-radius: 6px;
 }
