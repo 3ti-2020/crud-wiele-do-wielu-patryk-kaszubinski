@@ -37,6 +37,13 @@ $sql2="INSERT INTO `ksiazki`(`tytul`) VALUES ('$tytul')";
 
       $sql3  = "INSERT INTO wypozyczenia(`id_a`, `id_ks`) VALUES ('$zmienna', '$zmienna2')";
 
+      if ($conn->query($sql3) === TRUE) {
+            $zmienna = $conn->insert_id;
+            echo "New record created successfully. Last inserted ID is: " . $zmienna;
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          };
+
       mysqli_query($conn, $sql3);
 
       $conn->close();

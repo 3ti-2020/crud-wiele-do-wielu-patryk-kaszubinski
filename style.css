@@ -12,8 +12,9 @@ body{
     grid-area: a;
     background: tomato;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
 }
 .right{
     grid-area: b;
@@ -59,4 +60,23 @@ input{
     color: green;
     padding: 10px;
     border-radius: 6px;
+}
+.formu{
+    color: saddlebrown;
+}
+.wylog{
+    background: royalblue;
+    padding: 20px;
+    border-radius: 6px;
+}
+.pr{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+a{
+    text-align: center;
+}
+.fab{
+    font-size: 100px;
 }
