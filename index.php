@@ -46,6 +46,11 @@
     TYTUL<input type="text" name="tytul" placeholder="np. Quo Vadis">
     <input type="submit" value="Wyslij" method="POST">
     </form>
+    <div class="clock" id='clock'>
+    
+    </div>
+        
     </div>
 </body>
+<script src="script.js"></script>
 </html>

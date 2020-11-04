@@ -19,7 +19,8 @@ body{
     grid-area: b;
     background: turquoise;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 header{
@@ -39,7 +40,7 @@ table,td, tr{
     color: wheat;
 }
 form{
-    height: 80%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -52,4 +53,8 @@ td:hover{
 }
 input{
     border-radius: 6px;
+}
+.clock{
+    background: black;
+    color: green;
 }
