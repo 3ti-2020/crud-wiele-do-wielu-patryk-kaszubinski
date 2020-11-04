@@ -8,8 +8,9 @@
 </head>
 <body>  
     <header>
+        <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-patryk-kaszubinski"><h3>GitHub</h3></a>
         <h1>Patryk Kaszubiński 4Ti nr.5</h1>
-        <a href="kartka.html"><h2>KARTKA</h2></a>
+        <a href="kartka.html"><h3>KARTKA</h3></a>
     </header>
     <div class="main">
     
