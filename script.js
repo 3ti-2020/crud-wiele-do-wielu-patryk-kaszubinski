@@ -3,7 +3,8 @@ function Czas(){
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    
+    let kol = 0;
+
     let formatHours = convertFormat(hours);
 
     hours = checktime(hours);
@@ -13,7 +14,15 @@ function Czas(){
     seconds = addZero(seconds);
     document.getElementById('clock').innerHTML = `<h2>${hours} : ${minutes} : ${seconds} : ${formatHours}</h2>`;
 
-    
+    clock.addEventListener("click", e=>{
+        if(kol===0){
+            clock.style.background = "red";
+            kol++;
+        }else{
+            clock.style.background = "black";
+            kol-1;
+        }
+    });
 };
 
 function convertFormat(time){
@@ -40,6 +49,7 @@ function addZero(time){
     };
     return time;
 }
+
 
 Czas();
 setInterval(Czas, 1000);
