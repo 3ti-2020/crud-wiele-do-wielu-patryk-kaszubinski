@@ -80,3 +80,7 @@ a{
 .fab{
     font-size: 100px;
 }
+.karta{
+    border-radius: 6px;
+        background: aquamarine;
+}

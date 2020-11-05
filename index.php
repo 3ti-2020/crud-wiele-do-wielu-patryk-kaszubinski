@@ -17,7 +17,7 @@
             HASLO: <input type="text" name="haslo" placeholder="a">
             <input type="submit" value="zaloguj">
         </form>
-        <a href="kartka.html"><h3>KARTKA</h3></a>
+        <a href="kartka.html" class="karta"><h3>KARTKA</h3></a>
         </div>
     </header>
 
@@ -79,30 +79,3 @@
 </body>
 <script src="script.js"></script>
 </html>
-
-<!-- <?php
- //   }else{
-
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <div class="upper">
-            <h1>NIE ZALOGOWANO</h1>
-            <h3>BŁĘDNE HASŁO</h3>
-        </div>
-        <div class="lower">
-            <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj'>POWRÓT</a>
-        </div>
-        
-    </body>
-    </html>
-
-<?php
-   // }
-?>
