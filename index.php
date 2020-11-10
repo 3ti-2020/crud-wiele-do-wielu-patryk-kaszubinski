@@ -87,6 +87,7 @@
             $_SESSION['zalogowany'] = 1;
         }
     if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
+        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
     echo("<form action='insert.php' method='POST'>
     IMIE<input type='text' name='imie' placeholder='np. Henryk'>
     NAZWISKO<input type='text' name='nazwisko' placeholder='np. Sienkiewicz'>
@@ -94,6 +95,9 @@
     <input type='submit' value='Wyslij' method='POST'>
     </form>");
     };
+}else{
+        echo("<h4>NIE MASZ UPRAWNIEN ADMINISTRATORSKICH</h4>");
+    }
     ?>
     </div>
 </body>
