@@ -1,55 +1,22 @@
-function Czas(){
-    let date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-    let kol = 0;
+const form = document.getElementById("form");
+const btn = document.getElementById("btn");
+const zal = document.getElementById("zal");
+const wylog = document.getElementById("wylog");
 
-    let formatHours = convertFormat(hours);
+let zmian = 0;
 
-    hours = checktime(hours);
+btn.addEventListener('click', function(){
+    if(zmian===0){
+        form.style.display = "block";
+        zal.style.display = "none";
+        zmian++;
+    }
+});
 
-    hours = addZero(hours);
-    minutes = addZero(minutes);
-    seconds = addZero(seconds);
-    document.getElementById('clock').innerHTML = `<h2>${hours} : ${minutes} : ${seconds} : ${formatHours}</h2>`;
-
-    clock.addEventListener("click", e=>{
-        if(kol===0){
-            clock.style.background = "red";
-            kol++;
-        }else{
-            clock.style.background = "black";
-            kol-1;
-        }
-    });
-};
-
-function convertFormat(time){
-    let format = 'AM';
-    if (time>=12){
-        format = 'PM'
-    };
-    return format;
-}
-
-function checktime(time){
-    if(time>12){
-        time = time - 12;
-    };
-    if (time === 0){
-        time = 12;
-    };
-    return time;
-}
-
-function addZero(time){
-    if(time<10){
-        time="0" +time
-    };
-    return time;
-}
-
-
-Czas();
-setInterval(Czas, 1000);
+wylog.addEventListener('click', function(){
+    if(zmian===1){
+        form.style.display = "none";
+        zal.style.display = "block";
+        zmian--;
+    }
+});

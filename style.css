@@ -3,10 +3,11 @@ body{
     width: 100vw;
     display: grid;
     grid-template-rows: 1fr 3fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas: 
     'c c'
     'a b';
+    margin: 0;
 }
 .main{
     grid-area: a;
@@ -39,6 +40,7 @@ a{
 table,td, tr{
     border: 1px solid black;
     color: wheat;
+    background: cadetblue;
 }
 form{
     height: 60%;
@@ -55,14 +57,9 @@ td:hover{
 input{
     border-radius: 6px;
 }
-.clock{
-    background: black;
-    color: green;
-    padding: 10px;
-    border-radius: 6px;
-}
 .formu{
     color: saddlebrown;
+    display: none;
 }
 .wylog{
     background: royalblue;
@@ -71,8 +68,11 @@ input{
 }
 .pr{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 15rem;
 }
 a{
     text-align: center;
@@ -82,5 +82,10 @@ a{
 }
 .karta{
     border-radius: 6px;
-        background: aquamarine;
+    background: aquamarine;
+    width: 60%;
+}
+.karta:hover{
+    background: cornflowerblue;
+    transition: 0.5s;
 }
