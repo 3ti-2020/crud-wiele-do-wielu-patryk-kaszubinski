@@ -65,40 +65,84 @@
             echo("</tr>");
         }
         echo("</table>");
+
+        $result3 = $conn->query("SELECT * FROM wypoz");
+
+        echo("<table>");
+        echo("<tr>
+        <td>id_us</td>
+        <td>id_ks</td>
+        <td>data_wyp</td>
+        <td>data_odd</td>
+        </tr>");
+
+        while($wiersz3 = $result3->fetch_assoc()){
+            echo("<tr>");
+            echo("<td>".$wiersz3['id_us']."<td>".$wiersz3['id_ks']."<td>".$wiersz3['data_wyp']."<td>".$wiersz3['data_odd']);
+            echo("</tr>");
+        }
+        echo("</table>");
+
         echo("<a href='index.php?akcja=wyloguj'><h1 class='wylog' id='wylog'>WYLOGUJ</h1></a>");
     }else{
         echo("<h1 id='zal'>NIE ZALOGOWANO</h1>");
         echo("        
         <form action='index.php' method='POST' class='formu' id='form'>
-        LOGIN: <input type='text' name='login'>
+        LOGIN: <input type='text' name='login' placeholder='a'>
         HASLO: <input type='text' name='haslo' placeholder='a'>
         <input type='submit' value='zaloguj'>
     </form>");
+        echo("<p>login na gościa: gosc</p>");
+        echo("<p>hasło na gościa: b</p>");
     }
     ?>
     </div>
     <div class="right">
     <?php
-    if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){  
-            unset($_SESSION['zalogowany']);                         
-        }
-    
-    if(isset($_POST['haslo']) && $_POST['haslo'] == 'a' ){
-            $_SESSION['zalogowany'] = 1;
-        }
-    if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
+        $servername="remotemysql.com";
+        $username="Exb33YnuaQ";
+        $password="imJTYDYLDl";
+        $dbname="Exb33YnuaQ";
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
         if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
-    echo("<form action='insert.php' method='POST'>
-    IMIE<input type='text' name='imie' placeholder='np. Henryk'>
-    NAZWISKO<input type='text' name='nazwisko' placeholder='np. Sienkiewicz'>
-    TYTUL<input type='text' name='tytul' placeholder='np. Quo Vadis'>
-    <input type='submit' value='Wyslij' method='POST'>
-    </form>");
-    };
-}else{
-        echo("<h4>NIE MASZ UPRAWNIEN ADMINISTRATORSKICH</h4>");
-    }
-    ?>
+            echo("<form action='insert.php' method='POST'>
+            IMIE<input type='text' name='imie' placeholder='np. Henryk'>
+            NAZWISKO<input type='text' name='nazwisko' placeholder='np. Sienkiewicz'>
+            TYTUL<input type='text' name='tytul' placeholder='np. Quo Vadis'>
+            <input type='submit' value='Wyslij' method='POST'>
+            </form>");
+
+            ?>
+                <h2>Insert wypożyczenia</h2>
+                <form action="insertwyp.php" method="POST">
+                    <p>Książka:</p>
+                    <?php
+                        $result4 = $conn->query("SELECT id_ks, tytul FROM ksiazki");
+                        echo("<select name='id_ks'>");
+                        while($wiersz4 = $result4->fetch_assoc()){
+                            echo("<option value='".$wiersz4['id_ks']."' name='id_ks'>".$wiersz4['tytul']."</option>");
+                        }
+                        echo("</select>");
+                    ?>
+                    <p>Użytkownik:</p> 
+                    <?php
+                        $result5 = $conn->query("SELECT id_us, nazwa FROM users");
+                        echo("<select name='id_us'>");
+                        while($wiersz5 = $result5->fetch_assoc()){
+                            echo("<option value='".$wiersz5['id_us']."' name='id_us'>".$wiersz5['nazwa']."</option>");
+                        };
+                        echo("</select>");
+                    ?>
+                    Data oddania:<input type="date" name="data">
+                    <input type="submit" value="dodaj" method="POST">
+                </form>
+            <?php
+                }else{
+                    echo("<h4>NIE MASZ UPRAWNIEN ADMINISTRATORSKICH</h4>");
+                }
+            ?>
     </div>
 </body>
 <script src="script.js"></script>
