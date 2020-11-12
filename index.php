@@ -66,19 +66,25 @@
         }
         echo("</table>");
 
-        $result3 = $conn->query("SELECT * FROM wypoz");
+        $result3 = $conn->query("SELECT * FROM wypoz, users, ksiazki WHERE wypoz.id_us=users.id_us AND wypoz.id_ks=ksiazki.id_ks");
 
         echo("<table>");
         echo("<tr>
-        <td>id_us</td>
-        <td>id_ks</td>
+        <td>nazwa</td>
+        <td>tytul</td>
         <td>data_wyp</td>
         <td>data_odd</td>
+        <td>Oddaj</td>
         </tr>");
 
         while($wiersz3 = $result3->fetch_assoc()){
             echo("<tr>");
-            echo("<td>".$wiersz3['id_us']."<td>".$wiersz3['id_ks']."<td>".$wiersz3['data_wyp']."<td>".$wiersz3['data_odd']);
+            echo("<td>".$wiersz3['nazwa']."<td>".$wiersz3['tytul']."<td>".$wiersz3['data_wyp']."<td>".$wiersz3['data_odd']."<td>
+            <form action='delete.php' method='POST'>
+            <input type='hidden' name='id' value='".$wiersz3['id']."'>
+            <input type='submit' name='POST' value='oddaj' class='oddaj'>
+            </form>
+        </td>");
             echo("</tr>");
         }
         echo("</table>");

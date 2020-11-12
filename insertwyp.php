@@ -18,6 +18,6 @@ $sql="INSERT INTO `wypoz`(`id_us`, `id_ks`, `data_wyp`, `data_odd`) VALUES ('$id
 
       $conn->close();
 
-     header('Location: http://localhost/ads/index.php');
+     header('Location: https://wdw-patryk-k.herokuapp.com/');
 
 ?>

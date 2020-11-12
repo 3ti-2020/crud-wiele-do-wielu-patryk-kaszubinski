@@ -40,7 +40,7 @@ a{
 table,td, tr{
     border: 1px solid black;
     color: wheat;
-    background: cadetblue;
+    background: cadetblue   ;
 }
 form{
     height: 60%;
