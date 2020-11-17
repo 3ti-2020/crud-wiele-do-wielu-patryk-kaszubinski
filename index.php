@@ -50,18 +50,25 @@
     
             if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
 
-        $result2 = $conn->query("SELECT imie, nazwisko, tytul FROM ksiazki, wypozyczenia, autorzy WHERE ksiazki.id_ks = wypozyczenia.id_ks AND autorzy.id_a=wypozyczenia.id_a");
+        $result2 = $conn->query("SELECT id_wyp, imie, nazwisko, tytul FROM ksiazki, wypozyczenia, autorzy WHERE ksiazki.id_ks = wypozyczenia.id_ks AND autorzy.id_a=wypozyczenia.id_a");
 
         echo("<table>");
         echo("<tr>
         <td>Imie</td>
         <td>Nazwisko</td>
         <td>Tytul</td>
+        <td>USUŃ</td>
         </tr>");
 
         while($wiersz2 = $result2->fetch_assoc()){
             echo("<tr>");
-            echo("<td>".$wiersz2['imie']."<td>".$wiersz2['nazwisko']."<td>".$wiersz2['tytul']);
+            echo("<td>".$wiersz2['imie']."<td>".$wiersz2['nazwisko']."<td>".$wiersz2['tytul'].
+            "<td>
+            <form action='deleteks.php' method='POST'>
+            <input type='hidden' name='id_wyp' value='".$wiersz2['id_wyp']."'>
+            <input type='submit' name='POST' value='USUŃ' class='oddaj'>
+            </form>
+            </td>");
             echo("</tr>");
         }
         echo("</table>");
@@ -84,7 +91,7 @@
             <input type='hidden' name='id' value='".$wiersz3['id']."'>
             <input type='submit' name='POST' value='oddaj' class='oddaj'>
             </form>
-        </td>");
+            </td>");
             echo("</tr>");
         }
         echo("</table>");
