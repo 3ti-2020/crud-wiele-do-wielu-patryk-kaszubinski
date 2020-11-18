@@ -9,10 +9,7 @@
 </head>
 <body>  
     <header>
-        <div class="lewa">
         <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-patryk-kaszubinski" class="fab fa-github"></a>
-        <a href="/permission/index.php"><span class="tymcz">Tutaj tymczasowo strona z permission</span></a>
-        </div>
         <h1>Patryk Kaszubiński 4Ti nr.5</h1>
         <div class="pr">   
         <button class="karta" id="btn"><h3>ZALOGUJ</h3></button>
@@ -26,7 +23,7 @@
     
     if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){ 
         unset($_SESSION['zalogowany']);                         
-        unset($_SESSION['admin']); 
+        unset($_SESSION['role_id']); 
     }
     
         $servername="remotemysql.com";
@@ -42,9 +39,9 @@
 
             if(isset($_POST['haslo']) && isset($_POST['login'])){
                 while($wiersz = $result->fetch_assoc()){
-                    if($wiersz['nazwa']==$_POST['login'] && $wiersz['haslo']==$_POST['haslo'] && $wiersz['admin'] == 1){
+                    if($wiersz['nazwa']==$_POST['login'] && $wiersz['haslo']==$_POST['haslo'] && $wiersz['role_id'] == 1){
                         $_SESSION['zalogowany'] = 1;
-                        $_SESSION['admin'] = 1;
+                        $_SESSION['role_id'] = 1;
                     }else if($wiersz['nazwa']==$_POST['login'] && $wiersz['haslo']==$_POST['haslo']){
                         $_SESSION['zalogowany'] = 1;
                     }
@@ -122,7 +119,7 @@
         
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+        if(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1){
             echo("<form action='insert.php' method='POST'>
             IMIE<input type='text' name='imie' placeholder='np. Henryk'>
             NAZWISKO<input type='text' name='nazwisko' placeholder='np. Sienkiewicz'>
@@ -156,7 +153,7 @@
                 </form>
             <?php
                 }else{
-                    echo("<h4>NIE MASZ UPRAWNIEN ADMINISTRATORSKICH</h4>");
+                    echo("<h4 style='text-align: center;'>NIE MASZ UPRAWNIEN ADMINISTRATORSKICH</h4>");
                 }
             ?>
     </div>

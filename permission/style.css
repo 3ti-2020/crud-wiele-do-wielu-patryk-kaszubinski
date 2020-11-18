@@ -90,15 +90,3 @@ a{
     background: cornflowerblue;
     transition: 0.5s;
 }
-.lewa{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    height: 80%;
-    width: 15rem;
-}
-.tymcz{
-    background: cadetblue;
-    margin: 3px;
-}
