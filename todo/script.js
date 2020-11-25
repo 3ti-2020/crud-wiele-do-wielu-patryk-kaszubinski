@@ -29,4 +29,11 @@ function addTask(text) {
     element.querySelector(".element-text").innerText = text;
 
     todoList.append(element);
+
 };
+
+todoList.addEventListener("click", e => {
+    if (e.target.classList.contains("element-delete")) {
+        e.target.closest(".element").remove();
+    }
+});
