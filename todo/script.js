@@ -3,6 +3,8 @@ const todoForm = document.querySelector("#todoForm");
 const todoSearch = document.querySelector("#todoSearch");
 const todoTextarea = todoForm.querySelector('textarea');
 
+todoList.addEventListener("click", deleteCheck)
+
 function addTask(text) 
 {
     console.log("Dodaję zadanie do listy")
@@ -30,10 +32,20 @@ function addTask(text) {
 
     todoList.append(element);
 
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'DELETE';
+    deleteButton.classList.add('delete_btn')
+    element.appendChild(deleteButton);
+    todoList.appendChild(element);
+    todoTextarea.value = "";
 };
 
-todoList.addEventListener("click", e => {
-    if (e.target.classList.contains("element-delete")) {
-        e.target.closest(".element").remove();
-    }
-});
+function deleteCheck(e) {
+const item = e.target;
+
+if (item.classList[0] === "delete_btn") {
+    const todo = item.parentElement;
+    todo.remove()
+}
+};
+
