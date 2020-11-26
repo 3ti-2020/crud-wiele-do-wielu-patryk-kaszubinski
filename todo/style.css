@@ -1,0 +1,40 @@
+*{
+      background: aqua;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+.lista{
+    width: 400px;
+    border: gray 1px solid;
+    padding: 10px;
+    border-radius: 8px;
+}
+.element-text{
+    background: lightgray;
+    opacity: 1;
+    border-radius: 5px;
+    width: 100%;
+}
+textarea{
+    background: white;
+}
+button{
+    color: white;
+    background: tomato;
+    border-radius: 5px;
+}
+.delete_btn{
+    background: crimson;
+    border-radius: 5px;
+}
+.element{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}

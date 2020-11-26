@@ -3,17 +3,19 @@
     <title>TODO</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    <div class="container">
+    <div class="lista">
     <div class="cnt">
         <form class="form" id="todoForm">
             <div class="form-row">
-                <label class="form-label" for="todoMessage">Podaj treść zadania</label>
-                <textarea class="form-message" name="todoMessage" id="todoMessage"></textarea>
+                <textarea class="form-message" name="todoMessage" id="todoMessage" placeholder="Tutaj tekst"></textarea>
             </div>
             <div class="form-row">
-                <button type="submit" class="button form-button">Dodaj</button>
+                <button type="submit" class="button form-button" >Dodaj</button>
             </div>
         </form>
 
@@ -32,7 +34,8 @@
             
         </div>
     </template>
-
+    </div>
+</div>
 </body>
 <script src="script.js"></script>
 </html>

@@ -3,7 +3,7 @@ const todoForm = document.querySelector("#todoForm");
 const todoSearch = document.querySelector("#todoSearch");
 const todoTextarea = todoForm.querySelector('textarea');
 
-todoList.addEventListener("click", deleteCheck)
+todoList.addEventListener("click", deleteCheck);
 
 function addTask(text) 
 {
@@ -48,5 +48,4 @@ if (item.classList[0] === "delete_btn") {
     todo.remove()
 }
 };
-
 
