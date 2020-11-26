@@ -40,12 +40,5 @@ function addTask(text) {
     todoTextarea.value = "";
 };
 
-function deleteCheck(e) {
-const item = e.target;
 
-if (item.classList[0] === "delete_btn") {
-    const todo = item.parentElement;
-    todo.remove()
-}
-};
 
