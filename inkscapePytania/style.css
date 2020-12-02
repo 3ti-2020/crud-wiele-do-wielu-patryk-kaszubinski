@@ -1,0 +1,36 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "a b";
+}
+.pytanie{
+    grid-area: a;
+    background: tomato;
+}
+.prawa{
+    grid-area: b;
+    background: turquoise;
+}
+img{
+    width: 100%;
+}
+.question{
+    border: 3px solid black;
+}
+.question_answerItem{
+    border: 1px solid black;
+    width: 40%;
+    background: brown;
+    text-align: center;
+}
+span{
+    text-align: center;
+    width: 60px;
+    background: greenyellow;
+}
+.question_answerItem:hover{
+    background: chartreuse;
+}
