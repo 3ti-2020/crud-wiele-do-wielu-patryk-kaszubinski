@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .container{
     height: 100vh;
     width: 100vw;
@@ -18,12 +22,12 @@
     background: thistle;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .card{
     background: aqua;
-    height: 400px;
+    height: auto;
     width: 500px;
     margin: 3px;
     border-radius: 10px;
@@ -63,15 +67,10 @@
 }
 .obrazek{
     display: none;
-    position: relative;
-    left: 400px;
-    border-radius: 30px;
+    margin: 3px;
 }
-
 .prawo:hover + .obrazek{
     display: block;
-    background: gold;
-
 }
 input{
     background: transparent;
@@ -86,4 +85,9 @@ a{
     background: black;
     padding: 4px;
     border-radius: 8px;
+}
+img{
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
 }

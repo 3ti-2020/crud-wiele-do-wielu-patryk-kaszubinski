@@ -8,7 +8,14 @@
 </head>
 <body>
     <div class="container">
-    <div class="top"><h1><i>BLOG</i></h1></div>
+    <div class="top">
+        <h1><i>BLOG</i></h1>
+        <?php 
+        if(isset($_GET['szukaj_tag'])){
+        echo("<a href='index.php'>RESET</a>");
+        }
+        ?>
+    </div>
     <div class="main">
     <?php
     
@@ -25,7 +32,7 @@
 
 
     if(isset($_GET['szukaj_tag'])){
-        echo("<a href='index.php'>RESET</a>");
+
         $result = $conn->query("SELECT * FROM post, post_tag, tag WHERE post_tag.post_id=post.id AND tag.tag = '".$_GET['szukaj_tag']."' AND tag.id = post_tag.tag_id");
     }else{
         $result = $conn->query("SELECT * FROM post");
@@ -49,10 +56,10 @@
             echo("</div>");
         echo("</div>");
         echo($wiersz['zaw']);
-            echo("<div class='prawo'>");
-                echo("WCIŚNIJ");
+            echo("<div class='prawo' id='prawo'>");
+                echo("ZOBACZ ZDJĘCIA");
             echo("</div>");
-        echo("<div class='obrazek'>
+        echo("<div class='obrazek' id='obrazek'>
         <img src='obrazy/".$wiersz['obr']."'>
         </div>");
         echo("</div>");
