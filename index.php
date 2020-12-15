@@ -11,12 +11,12 @@
     <header>
         <div class="lewa">
         <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-patryk-kaszubinski" class="fab fa-github"></a>
-        <a href="/permission/index.php"><span class="tymcz">Tutaj tymczasowo strona z permission</span></a>
         </div>
         <h1>Patryk Kaszubiński 4Ti nr.5</h1>
         <div class="pr">   
         <button class="karta" id="btn"><h3>ZALOGUJ</h3></button>
         <a href="kartka.html" class="karta"><h3>KARTKA</h3></a>
+        <a href="/ads/inkscapePytania/" class="karta"><h3>PYTANIA</h3></a>
         </div>
     </header>
 
@@ -42,9 +42,9 @@
 
             if(isset($_POST['haslo']) && isset($_POST['login'])){
                 while($wiersz = $result->fetch_assoc()){
-                    if($wiersz['nazwa']==$_POST['login'] && $wiersz['haslo']==$_POST['haslo'] && $wiersz['admin'] == 1){
+                    if($wiersz['nazwa']==$_POST['login'] && $wiersz['haslo']==$_POST['haslo'] && $wiersz['role_id'] == 1){
                         $_SESSION['zalogowany'] = 1;
-                        $_SESSION['admin'] = 1;
+                        $_SESSION['role_id'] = 1;
                     }else if($wiersz['nazwa']==$_POST['login'] && $wiersz['haslo']==$_POST['haslo']){
                         $_SESSION['zalogowany'] = 1;
                     }
@@ -87,17 +87,39 @@
         <td>Oddaj</td>
         </tr>");
 
+        $i=0;
+
         while($wiersz3 = $result3->fetch_assoc()){
             echo("<tr>");
-            echo("<td>".$wiersz3['nazwa']."<td>".$wiersz3['tytul']."<td>".$wiersz3['data_wyp']."<td>".$wiersz3['data_odd']."<td>
+            echo("<td>".$wiersz3['nazwa']."<td>".$wiersz3['tytul']."<td>".$wiersz3['data_wyp']."<td id='dataodd'>".$wiersz3['data_odd']."<td>
             <form action='delete.php' method='POST'>
             <input type='hidden' name='id' value='".$wiersz3['id']."'>
             <input type='submit' name='POST' value='oddaj' class='oddaj'>
             </form>
             </td>");
             echo("</tr>");
+            
+            $data_odd[$i]=$wiersz3['data_odd'];
+            $i++;
         }
+        echo($data_odd[0]);
         echo("</table>");
+
+        echo(date("Y-m-d"));
+
+        $curdate=date("Y-m-d");
+
+
+        function dateDifference($data_odd, $curdate , $differenceFormat = '%a' )
+        {
+            $datetime1 = date_create($data_odd);
+            $datetime2 = date_create($curdate);
+        
+            $interval = date_diff($datetime1, $datetime2);
+        
+            return $interval->format($differenceFormat);
+        
+        }
 
         echo("<a href='index.php?akcja=wyloguj'><h1 class='wylog' id='wylog'>WYLOGUJ</h1></a>");
     }else{
@@ -122,7 +144,7 @@
         
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+        if(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1){
             echo("<form action='insert.php' method='POST'>
             IMIE<input type='text' name='imie' placeholder='np. Henryk'>
             NAZWISKO<input type='text' name='nazwisko' placeholder='np. Sienkiewicz'>
