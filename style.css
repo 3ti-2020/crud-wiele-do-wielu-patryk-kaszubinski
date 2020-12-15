@@ -1,104 +1,93 @@
-body{
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-rows: 1fr 3fr;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 
-    'c c'
-    'a b';
-    margin: 0;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: "a"
+    "b";
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.top{
+    grid-area: a;
+    background: tan;
 }
 .main{
-    grid-area: a;
-    background: tomato;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-.right{
     grid-area: b;
-    background: turquoise;
+    background: thistle;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
-header{
-    grid-area: c;
-    background: yellow;
+.card{
+    background: aqua;
+    height: auto;
+    width: 500px;
+    margin: 3px;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    flex-shrink: 0;
+}
+.header{
+    width: 500px;
+    height: auto;
+    background: green;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.header:hover{
+    background: rgb(2, 199, 28);
+    transition: 0.5s;
+}
+
+.formu{
+    display: flex;
+    justify-content: flex-end;
+}
+.prawo{
+    height: 50px;
+    width: 200px;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.obrazek{
+    display: none;
+    margin: 3px;
+}
+.prawo:hover + .obrazek{
+    display: block;
+}
+input{
+    background: transparent;
+    border: none;
+    margin: 3px;
+    color: red;
+    text-decoration: underline;
 }
 a{
     text-decoration: none;
-    text-decoration-line: none;
-    color: black;
-}
-table,td, tr{
-    border: 1px solid black;
-    color: wheat;
-    background: cadetblue;
-    text-align: center;
-}
-form{
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     color: white;
+    background: black;
+    padding: 4px;
+    border-radius: 8px;
 }
-td:hover{
-    background: crimson;
-    transition: 0.3s;
-}
-input{
-    border-radius: 6px;
-}
-.formu{
-    color: saddlebrown;
-    display: none;
-}
-.wylog{
-    background: royalblue;
-    padding: 20px;
-    border-radius: 6px;
-}
-.pr{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    height: 80%;
-    width: 15rem;
-}
-a{
-    text-align: center;
-}
-.fab{
-    font-size: 100px;
-}
-.karta{
-    border-radius: 6px;
-    background: aquamarine;
-    width: 60%;
-}
-.karta:hover{
-    background: cornflowerblue;
-    transition: 0.5s;
-}
-.lewa{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    height: 80%;
-    width: 15rem;
-}
-.tymcz{
-    background: cadetblue;
-    margin: 3px;
+img{
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
 }
