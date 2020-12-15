@@ -5,6 +5,7 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "a b";
+    margin: 0;
 }
 .pytanie{
     grid-area: a;
@@ -16,6 +17,7 @@
 }
 img{
     width: 100%;
+    height: auto;
 }
 .question{
     border: 3px solid black;
