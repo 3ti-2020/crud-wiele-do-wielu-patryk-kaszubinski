@@ -22,7 +22,7 @@
     background: thistle;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .card{
@@ -45,7 +45,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 .header:hover{
     background: rgb(2, 199, 28);
