@@ -16,6 +16,10 @@
 .top{
     grid-area: a;
     background: tan;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .main{
     grid-area: b;
@@ -34,7 +38,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
 }
 .header{
     width: 500px;
@@ -86,7 +89,7 @@ a{
     border-radius: 8px;
 }
 img{
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
+    border-radius: 20%;
+    width: 200px;
+    height: 200px;
 }

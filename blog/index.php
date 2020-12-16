@@ -27,10 +27,6 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-
-
-
-
     if(isset($_GET['znajdz'])){
         $result = $conn->query("SELECT Distinct post, zaw, post.id, img FROM post, post_tag, tag WHERE post_tag.post_id=post.id AND tag.id = post_tag.tag_id AND tag.tag = '".$_GET['znajdz']."'");
     }else{
@@ -59,6 +55,7 @@
         echo("<div class='obrazek' id='obrazek'>");
         echo ('<img src="data:image/jpeg;base64,'.base64_encode($wiersz['img']).'"/>');
         echo("</div>");
+
 
 
         echo("</div>");   
