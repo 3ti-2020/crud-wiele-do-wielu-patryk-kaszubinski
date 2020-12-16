@@ -36,7 +36,6 @@
         $result = $conn->query("SELECT * FROM post, post_tag, tag WHERE post_tag.post_id=post.id AND tag.tag = '".$_GET['szukaj_tag']."' AND tag.id = post_tag.tag_id");
     }else{
         $result = $conn->query("SELECT * FROM post");
-
     }
 
     while($wiersz = $result->fetch_assoc()){
@@ -59,14 +58,13 @@
             echo("<div class='prawo' id='prawo'>");
                 echo("ZOBACZ ZDJĘCIA");
             echo("</div>");
-        echo("<div class='obrazek' id='obrazek'>
-        <img src='obrazy/".$wiersz['obr']."'>
-        </div>");
+        echo("<div class='obrazek' id='obrazek'>");
+        echo ('<img src="data:image/jpeg;base64,'.base64_encode($wiersz['img']).'"/>');
         echo("</div>");
 
-        
+
+        echo("</div>");   
     }
-    
     ?>
     </div>
     </div>
